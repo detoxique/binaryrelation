@@ -1,0 +1,119 @@
+:root {
+    --focus_color: #6D9B50
+}
+
+html,
+h1,
+h3,
+h4,
+h5 {
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+
+}
+body{
+    background: #CECECE;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+h2 {
+    color: #000000;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+}
+
+/*
+    HEADER
+*/
+
+header{
+    background: #6D9B50;
+    height: 64px;
+}
+header h1{
+    margin-top: 12px;
+    font-size: 32px;
+}
+header h1 a{
+    color: #ffffff;
+    margin-top: 6px;
+}
+header h1 a:hover{
+    color: #ffffff;
+    margin-top: 6px;
+}
+
+/*
+    FORM
+*/
+
+body {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+}
+
+.form {
+    margin-top: 188px;
+    width: 360px;
+    display: grid;
+    padding: 32px;
+    padding-bottom: 16px;
+    background-color: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    
+}
+
+.title {
+    margin-bottom: 24px;
+    font-weight: 600;
+    font-size: 18px;
+}
+label{
+    position: relative;
+}
+
+input{
+    height: 24px;
+    width: 286px;
+    border-radius: 10px;
+    background-color: #F1F1F1;
+    outline: none;
+    padding: 12px;
+    border: 1px solid #CECECE;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+input:focus, 
+label.filled input{
+    border-color: var(--focus_color);
+}
+input:focus + span, 
+label.filled span {
+    cursor:default;
+    font-size: 6px;
+    color: #00000000;
+}
+span{
+    cursor: text;
+    position: absolute;
+    left: 12px;
+    color:#666666;
+    transition: all 0.1s ease-in-out;
+}
+.Button{
+    cursor: pointer;
+    justify-self: center;
+    background-color: var(--focus_color);
+    color:#ffffff;
+    padding: 4px 10px;
+    border-radius: 7px;
+    margin-top: 12px;
+}
