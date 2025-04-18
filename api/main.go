@@ -28,6 +28,11 @@ type Response struct {
 	RefreshToken string `json:"refresh_token"`
 }
 
+// Токен
+type TokenResponse struct {
+	AccessToken string `json:"Authorization"`
+}
+
 // Авторизация
 func handleAuth(w http.ResponseWriter, r *http.Request) {
 	// Обрабатывать только POST запросы
@@ -90,7 +95,22 @@ func handleAuth(w http.ResponseWriter, r *http.Request) {
 
 // Подтверждение токена
 func verifyToken(w http.ResponseWriter, r *http.Request) {
+	// Обрабатывать только POST запросы
+	if r.Method != "POST" {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
 
+	var token TokenResponse
+
+	// Чтение JSON
+	err := json.NewDecoder(r.Body).Decode(&token)
+	if err != nil {
+		http.Error(w, "Invalid request", http.StatusBadRequest)
+		return
+	}
+
+	log.Println("access_token: " + token.AccessToken)
 }
 
 func sendError(w http.ResponseWriter, message string, status int) {

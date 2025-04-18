@@ -47,8 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Ошибка проверки токена
         console.error('Error:', error);
         document.body.innerHTML = '<h2>Ошибка авторизации. Токен недействителен.</h2>';
-        localStorage.removeItem('jwtToken'); // Удаляем недействительный токен
-        setTimeout(() => window.location.href = '/index.html', 2000);
+        localStorage.removeItem('access_token'); // Удаляем недействительный токены
+        localStorage.removeItem('refresh_token');
+        setTimeout(() => window.location.href = '/', 2000);
     });
 });
 
